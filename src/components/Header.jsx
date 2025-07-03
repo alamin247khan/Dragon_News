@@ -1,19 +1,21 @@
-import logo from '../assets/logo.png';
+import React from 'react'
+import Logo from '../assets/logo.png'
 
-function Header() {
-  const currentTime = new Date().toLocaleString();
+export default function Header() {
+  const currentDate = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
 
   return (
-    <div className="text-center mt-5">
-      <img
-        src={logo}
-        alt="Logo"
-        className="h-12 mx-auto mb-2 block"
-      />
-      <p className="mb-2 text-lg font-medium text-gray-700">Journalism Without Fear or Favour</p>
-      <p className="mb-2 text-sm text-gray-500">{currentTime}</p>
+    <div className="flex flex-col items-center justify-center py-8">
+        <div className="logo flex flex-col items-center">
+            <img src={Logo} alt="Logo" className="w-auto h-16 mb-4" />
+            <p className="text-center text-lg font-medium text-gray-700 mb-2">Journalism Without Fear or Favour</p>
+            <p className="text-center text-sm text-gray-500">{currentDate}</p>
+        </div>
     </div>
-  );
+  )
 }
-
-export default Header;
