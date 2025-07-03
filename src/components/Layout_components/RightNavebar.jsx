@@ -1,11 +1,12 @@
 import React from 'react';
 import SocialLogin from '../SocialLogin';
+import FindUs from '../FindUs';
 
 export default function RightNavebar() {
   return (
     <aside>
       <SocialLogin />
-      {/* Add more right navbar content here if needed */}
+      <FindUs />
     </aside>
   );
 }
