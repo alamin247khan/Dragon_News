@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import { FaStar, FaEye } from "react-icons/fa";
 export default function CategoryNews() {
   const { data: news } = useLoaderData();
@@ -83,9 +83,12 @@ export default function CategoryNews() {
 
               {/* Read More */}
               <div className="mt-4 pt-4 border-t border-gray-100">
-                <button className="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                <Link 
+                  to={`/news/${item._id}`} 
+                  className="text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                >
                   Read More →
-                </button>
+                </Link>
               </div>
 
               {/* Footer */}
